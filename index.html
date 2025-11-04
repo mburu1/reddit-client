@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Client - Multi-Lane Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="logo">
+                    <span class="logo-icon">📱</span>
+                    Reddit Client
+                </h1>
+                <p class="tagline">Browse multiple subreddits in customizable lanes</p>
+            </div>
+            <div class="header-right">
+                <button id="clear-all-btn" class="btn btn-danger" title="Clear all lanes">
+                    🗑️ Clear All
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add Lane Section -->
+    <section class="add-lane-section">
+        <div class="add-lane-container">
+            <div class="add-lane-form">
+                <input 
+                    type="text" 
+                    id="subreddit-input" 
+                    class="subreddit-input" 
+                    placeholder="Enter subreddit name (e.g., javascript, funny, pics)"
+                    autocomplete="off"
+                >
+                <button id="add-lane-btn" class="btn btn-primary">
+                    ➕ Add Lane
+                </button>
+            </div>
+            <div id="add-lane-message" class="add-lane-message hidden"></div>
+        </div>
+    </section>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="empty-state">
+        <div class="empty-state-content">
+            <div class="empty-state-icon">🚀</div>
+            <h2>Welcome to Reddit Client!</h2>
+            <p>Start by adding your first subreddit lane above.</p>
+            <div class="suggestions">
+                <p class="suggestions-title">Popular suggestions:</p>
+                <div class="suggestion-chips">
+                    <button class="chip" data-subreddit="javascript">javascript</button>
+                    <button class="chip" data-subreddit="programming">programming</button>
+                    <button class="chip" data-subreddit="webdev">webdev</button>
+                    <button class="chip" data-subreddit="funny">funny</button>
+                    <button class="chip" data-subreddit="pics">pics</button>
+                    <button class="chip" data-subreddit="todayilearned">todayilearned</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lanes Container -->
+    <div id="lanes-container" class="lanes-container hidden">
+        <!-- Lanes will be dynamically added here -->
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner-large"></div>
+        <p>Loading subreddit...</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            Powered by <a href="https://www.reddit.com" target="_blank" rel="noopener">Reddit JSON API</a>
+            | Data updates in real-time
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
